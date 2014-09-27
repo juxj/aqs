@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.lh.appasync.model.po.Player" table="player" schema="">
+		<id name="uid">
+			<column name="uid" sql-type="varchar" length="36" not-null="true" />
+		</id>
+		<property name="userId" type="java.lang.String">
+            <column name="user_id" length="36" />
+        </property>
+        <property name="nickName" type="java.lang.String">
+            <column name="nick_name" length="64" />
+        </property>
+        <property name="signature" type="java.lang.String">
+            <column name="signature" length="65535" />
+        </property>
+        <property name="lastLoginTime" type="java.sql.Timestamp">
+            <column name="last_login_time" length="0" not-null="true">
+                <comment>最后上线时间</comment>
+            </column>
+        </property>
+        <property name="headImgPath" type="java.lang.String">
+            <column name="head_img_path" length="128" />
+        </property>
+        <property name="originalImage" type="java.lang.String">
+            <column name="original_image" length="128" />
+        </property>
+        <property name="songer" type="java.lang.Integer">
+            <column name="songer">
+                <comment>歌手等级</comment>
+            </column>
+        </property>
+        <property name="songerGrade" type="java.lang.String">
+            <column name="songer_grade" length="36" not-null="true">
+                <comment>歌手等级显示内容</comment>
+            </column>
+        </property>
+        <property name="songerLogo" type="java.lang.String">
+            <column name="songer_logo" length="256">
+                <comment>歌手等级图片</comment>
+            </column>
+        </property>
+        <property name="nextSongerGrade" type="java.lang.Integer">
+            <column name="next_songer_grade">
+                <comment>歌手等级升级需要多少经验</comment>
+            </column>
+        </property>
+        <property name="wealth" type="java.lang.Integer">
+            <column name="wealth">
+                <comment>财富等级</comment>
+            </column>
+        </property>
+        <property name="wealthGrade" type="java.lang.String">
+            <column name="wealth_grade" length="36">
+                <comment>财富等级显示内容</comment>
+            </column>
+        </property>
+        <property name="wealthLogo" type="java.lang.String">
+            <column name="wealth_logo" length="256" />
+        </property>
+        <property name="nextWealthGrade" type="java.lang.Integer">
+            <column name="next_wealth_grade">
+                <comment>下级财富等级需要经验值</comment>
+            </column>
+        </property>
+        <property name="honor" type="java.lang.Integer">
+            <column name="honor">
+                <comment>荣誉等级</comment>
+            </column>
+        </property>
+        <property name="honorGrade" type="java.lang.String">
+            <column name="honor_grade" length="36">
+                <comment>荣誉等级显示内容</comment>
+            </column>
+        </property>
+        <property name="honorLogo" type="java.lang.String">
+            <column name="honor_logo" length="256">
+                <comment>荣誉logo</comment>
+            </column>
+        </property>
+        <property name="experience" type="java.lang.Double">
+            <column name="experience" precision="10" />
+        </property>
+        <property name="songerPopular" type="java.lang.Double">
+            <column name="songer_popular" precision="16" scale="0">
+                <comment>歌手经验</comment>
+            </column>
+        </property>
+        <property name="lastSysmsgTime" type="java.sql.Timestamp">
+            <column name="last_sysmsg_time" length="0" not-null="true">
+                <comment>最后获取系统消息的时间</comment>
+            </column>
+        </property>
+        <property name="createdDate" type="java.sql.Timestamp">
+            <column name="created_date" length="0" not-null="true" />
+        </property>
+        <property name="logonDevice" type="java.lang.String">
+            <column name="logon_device" length="64" />
+        </property>
+        <property name="deletedBy" type="java.lang.String">
+            <column name="deleted_by" length="36">
+                <comment>删除操作人员</comment>
+            </column>
+        </property>
+        <property name="deletedDate" type="java.sql.Timestamp">
+            <column name="deleted_date" length="0" not-null="true">
+                <comment>删除日期</comment>
+            </column>
+        </property>
+        <property name="deletedFlag" type="java.lang.Short">
+            <column name="deleted_flag">
+                <comment>删除标记 (0. 未删除， 1.已删除)</comment>
+            </column>
+        </property>
+        <property name="useFlag" type="java.lang.Short">
+            <column name="use_flag">
+                <comment>启用标识：0启用；1禁用;</comment>
+            </column>
+        </property>
+        <property name="fromType" type="java.lang.Short">
+            <column name="from_type">
+                <comment>注册来源：0-WEB;1-ANDROID;2-IOS;3:未知</comment>
+            </column>
+        </property>
+        <property name="gender" type="java.lang.Short">
+            <column name="gender">
+                <comment>性别1男0女</comment>
+            </column>
+        </property>
+        <property name="bornDate" type="java.util.Date">
+            <column name="born_date" length="0">
+                <comment>生日</comment>
+            </column>
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="city" length="64">
+                <comment>所在城市</comment>
+            </column>
+        </property>
+        <property name="latitude" type="java.lang.Double">
+            <column name="latitude" precision="10" scale="7" />
+        </property>
+        <property name="longitude" type="java.lang.Double">
+            <column name="longitude" precision="10" scale="7" />
+        </property>
+        <property name="gold" type="java.lang.Double">
+            <column name="gold">
+                <comment>账户金币数目</comment>
+            </column>
+        </property>
+        <property name="goldBean" type="java.lang.Double">
+            <column name="gold_bean">
+                <comment>账户金豆数</comment>
+            </column>
+        </property>
+        <property name="vipGrade" type="java.lang.Integer">
+            <column name="vip_grade">
+                <comment>vip等级数</comment>
+            </column>
+        </property>
+        <property name="vipLogo" type="java.lang.String">
+            <column name="vip_logo" length="256">
+                <comment>vip图标</comment>
+            </column>
+        </property>
+        <property name="familyName" type="java.lang.String">
+            <column name="family_name" length="64">
+                <comment>所在家族名称</comment>
+            </column>
+        </property>
+        <property name="giftMoney" type="java.lang.Double">
+            <column name="gift_money" precision="10">
+                <comment>礼物金额</comment>
+            </column>
+        </property>
+        <property name="giftCount" type="java.lang.Integer">
+            <column name="gift_count">
+                <comment>礼物数</comment>
+            </column>
+        </property>
+        <property name="praiseCount" type="java.lang.Integer">
+            <column name="praise_count">
+                <comment>免费礼物数</comment>
+            </column>
+        </property>
+        <property name="compositionCount" type="java.lang.Integer">
+            <column name="composition_count">
+                <comment>作品数</comment>
+            </column>
+        </property>
+        <property name="publicCompositonCount" type="java.lang.Integer">
+            <column name="public_compositon_count">
+                <comment>公开作品数</comment>
+            </column>
+        </property>
+        <property name="focusCount" type="java.lang.Integer">
+            <column name="focus_count">
+                <comment>关注数</comment>
+            </column>
+        </property>
+        <property name="funsCount" type="java.lang.Integer">
+            <column name="funs_count">
+                <comment>粉丝数</comment>
+            </column>
+        </property>
+        <property name="isSinger" type="java.lang.Integer">
+            <column name="singer_certification">
+                <comment>歌手认证：0非认证歌手；1认证歌手</comment>
+            </column>
+        </property>
+        <property name="isTop" type="java.lang.Integer">
+            <column name="is_top">
+                <comment>是否排榜：0不排榜；1排榜</comment>
+            </column>
+        </property>
+        <property name="certification" type="java.lang.String">
+            <column name="certification">
+                <comment>认证内容</comment>
+            </column>
+        </property>
+        <property name="guid" type="java.lang.String">
+            <column name="guid" length="24" />
+        </property>
+        <property name="SongerGradeTotal" type="java.lang.Double">
+            <column name="songer_grade_total" precision="16" scale="0">
+                <comment>歌手升级经验总值</comment>
+            </column>
+        </property>
+        <property name="WealthGradeTotal" type="java.lang.Double">
+            <column name="wealth_grade_total" precision="16" scale="0">
+                <comment>财富升级经验总值</comment>
+            </column>
+        </property>
+	</class>
+</hibernate-mapping>

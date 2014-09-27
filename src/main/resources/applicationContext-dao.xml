@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd" default-autowire="byName">
+    
+    <bean name="compositionDAO" class="com.lh.appasync.dao.impl.CompositionDAOImpl"/>
+    <bean name="playerDAO" class="com.lh.appasync.dao.impl.PlayerDAOImpl"/>
+    <bean name="playerGradeInfoDAO" class="com.lh.appasync.dao.impl.PlayerGradeInfoDAOImpl"/>
+    <bean name="gradeLevelSettingDAO" class="com.lh.appasync.dao.impl.GradeLevelSettingDAOImpl"/>
+    
+</beans>

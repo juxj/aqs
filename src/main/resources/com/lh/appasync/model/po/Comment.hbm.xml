@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.lh.appasync.model.po.Comment" table="comment" schema="">
+        <id name="uid">
+            <column name="uid" sql-type="varchar" length="36" not-null="true"/>
+        </id>
+        <property name="key">
+            <column name="common_key" sql-type="varchar" length="36"/>
+        </property>
+        <property name="content">
+            <column name="content" sql-type="varchar" length="256"/>
+        </property>
+    </class>
+</hibernate-mapping>
